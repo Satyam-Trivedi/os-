@@ -1,50 +1,26 @@
 
-int Wt[30],TA[30],CT[30];double pro9=0,som=0;  //CT means completion time
-int a[40],b[40],Time[40],m[40],Pro[100],SLP;
-int i,j,SM,count=0,time,n,end1;  int Arri=99999;
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+ int a[100],b[100],x[100];
+ int waiting[100],turnaround[100],completion[100];
+ int i,j,smallest,count=0,time,n;
+ double avg=0,tt=0,end;
  
- int fun3()
-{
-for(int i=0;i<n;i++)
-{
-if(b[i]>0)
-{
-return 1;
-}
+ printf("\nEnter the number of Processes: ");
+ scanf("%d",&n);
+ for(i=0;i<n;i++)
+ {
+   printf("\nEnter arrival time of process %d : ",i+1);
+   scanf("%d",&a[i]);
+ }
+ for(i=0;i<n;i++)
+ {
+   printf("\nEnter burst time of process %d : ",i+1);
+   scanf("%d",&b[i]);
+ }
+ for(i=0;i<n;i++)
+ x[i]=b[i];
 
-}
-return 0;
-}
- 
-void fun4()
-{
-for(int i=0;i<n;i++)
-{
-if(a[i]==time)
-{
-Pro[SLP]=i;
-SLP++;
-}
-}
-}
-
-int fun6()  
-{
-if(SLP==0)
-{
-return -1;
-}
-int s1,pro1;
-pro1=Pro[0];
-s1=b[Pro[0]];
-for(int i=0;i<SLP;i++)
-{
-if(b[Pro[i]]<s1)
-{
-s1=b[Pro[i]];
-pro1=Pro[i];
-}
-}
-return pro1;
-}
-
+  b[9]=9999;
